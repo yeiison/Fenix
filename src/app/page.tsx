@@ -1,11 +1,15 @@
 import React from 'react';
-import HomePage from '../components/HomePage'; // Importa el componente desde la carpeta correcta
+import Navbar from '../components/Navbar';
+import ProductList from '../components/ProductList';
+
 
 export default function Page() {
   // Puedes pasar productos y categorías desde aquí si los tienes
   const products = [
-    { id: 1, name: 'Producto 1', price: 20, image: '/images/product1.jpg', slug: 'producto-1' },
-    { id: 2, name: 'Producto 2', price: 30, image: '/images/product2.jpg', slug: 'producto-2' },
+    { id: 1, name: 'T-Shirt', price: 20, image: '/images/tshirt.jpg', slug: 'tshirt' },
+    { id: 2, name: 'Joggers', price: 40, image: '/images/joggers.jpg', slug: 'joggers' },
+    { id: 3, name: 'Sweatshirt', price: 60, image: '/images/sweatshirt.jpg', slug: 'sweatshirt' },
+    { id: 4, name: 'Shorts', price: 30, image: '/images/shorts.jpg', slug: 'shorts' },
     // Añadir más productos según sea necesario
   ];
 
@@ -15,5 +19,12 @@ export default function Page() {
     // Añadir más categorías
   ];
 
-  return <HomePage products={products} categories={categories} />;
+
+  return (
+    <>
+      <Navbar />
+      <ProductList products={products} />
+    </>
+  );
+  
 }
